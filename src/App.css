@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh !important;
+  background-image: url(../public/background.avif);
+  /* background-repeat: no-repeat; */
+}
+
+.sidebar {
+  background-color: rgba(247, 56, 32, 0.7);
+  /* z-index: 100; */
+}
+
+.black {
+  border: 1px solid grey;
+}
+a {
+  text-decoration: none !important;
+}
+
+#parentM li a:hover {
+  background-color: gray;
+}
+
+.h-60 {
+  height: 100px;
+}
+
+.cards {
+  position: relative;
+  transition: 0.3s;
+  padding: 10px 30px;
+  width: 350px;
+  height: 300px;
+  cursor: pointer;
+}
+
+.cards:hover {
+  height: 400px;
+}
+
+.imgbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-60px);
+  z-index: 10;
+}
+
+img {
+  width: 100%;
+}
+
+.content {
+  z-index: -9;
+  transform: translateY(-100px);
+}
