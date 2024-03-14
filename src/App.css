@@ -3,15 +3,37 @@ body {
   padding: 0;
   background-color: #f3d4bb !important;
   background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 
 .bg-image {
   background-image: url(../public/background.avif);
 }
 
+.rows {
+  width: 260px;
+}
+
 .sidebar {
+  /* background-color: rgba(247, 56, 32, 0.7) !important; */
   background-color: rgba(247, 56, 32, 0.7) !important;
-  /* z-index: 100; */
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  /* overflow-y: auto; */
+}
+.main-body-content {
+  margin-left: 200px;
+}
+
+.ml-200 {
+  margin-left: 200px !important;
+}
+
+.position-fixed {
+  position: fixed !important;
 }
 
 .black {
@@ -172,6 +194,13 @@ img {
   background-color: rgb(37, 208, 208);
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: white; /* Set the scrollbar thumb color to white */
+.nav-margin {
+  margin: 13px 0px 13px 290px;
+}
+
+.navbar-expand-lg {
+}
+
+.ml-300 {
+  margin-left: 300px;
 }
