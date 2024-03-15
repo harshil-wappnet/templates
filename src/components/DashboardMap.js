@@ -1,11 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { RiGlobalLine } from "react-icons/ri";
-import US from "../assets/images/US.webp"
-import GER from "../assets/images/ger.webp"
-import UK from "../assets/images/UK.webp"
-import AUS from "../assets/images/AU.webp"
-import RO from "../assets/images/RO.png"
-import BR from "../assets/images/BR.webp"
 import { VectorMap } from '@react-jvectormap/core';
 import { worldMill } from '@react-jvectormap/world';
 import { CiClock2 } from "react-icons/ci";
@@ -15,8 +9,25 @@ import { MdRefresh } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
 import CardComponents from "../components/CardComponents";
 import ManageList from "../components/ManageList";
+import WorldDataTable from './WorldDataTable';
 
 const DashboardMap = () => {
+    const [selectedCountry, setSelectedCountry] = useState();
+
+    const handleCountryClick = (event, code) => {
+        console.log("Clicked country code:", code);
+        setSelectedCountry(code);
+    };
+
+    const regionStyle = {
+        initial: { fill: '#686868' },
+        selected: { fill: '#686868' }
+    };
+
+    // Update the regionStyle for the selected country
+    if (selectedCountry) {
+        regionStyle[selectedCountry] = { fill: '#fff' };
+    }
     return (
         <div className='rounded mt-5'>
             <div className='bg-white rounded shadow'>
@@ -26,78 +37,17 @@ const DashboardMap = () => {
                     </div>
                     <span className='fw-light fs-5 mx-3 pb-4'>Global Sales by Top Locations</span>
                 </div>
-                <div className='row flex-lg-row flex-column py-4'>
-                    <div className='col d-flex  align-items-center position-relative mx-3'>
-                        <div className='d-flex flex-column'>
-                            <div className='d-flex flex-row'>
-                                <div className='d-flex flex-row'>
-                                    <img src={US} alt="US-flag" className='img-flag' />
-                                    <span className='m-6 fw-light fs-6'>USA</span>
-                                </div>
-                                <div className='d-flex flex-row p-us-6'>
-                                    <span className='fw-light fs-6'>2.920</span>
-                                    <span className='m-6 fw-light fs-6'>53.23%</span>
-                                </div>
-                            </div>
-                            <hr className="text-dark d-none d-sm-block"></hr>
-                            <div className='d-flex flex-row'>
-                                <div className='d-flex flex-row'>
-                                    <img src={GER} alt="GER-flag" className='img-flag' />
-                                    <span className='m-6 fw-light fs-6'>Germany</span>
-                                </div>
-                                <div className='d-flex flex-row p-ger-6'>
-                                    <span className='fw-light fs-6'>1.300</span>
-                                    <span className='m-6 fw-light fs-6'>20.43%</span>
-                                </div>
-                            </div>
-                            <hr className="text-dark d-none d-sm-block"></hr>
-                            <div className='d-flex flex-row'>
-                                <div className='d-flex flex-row'>
-                                    <img src={AUS} alt="AUS-flag" className='img-flag' />
-                                    <span className='m-6 fw-light fs-6'>Australia</span>
-                                </div>
-                                <div className='d-flex flex-row p-aus-6'>
-                                    <span className='fw-light fs-6'>0760</span>
-                                    <span className='m-6 fw-light fs-6'>10.35%</span>
-                                </div>
-                            </div>
-                            <hr className="text-dark d-none d-sm-block"></hr>
-                            <div className='d-flex flex-row'>
-                                <div className='d-flex flex-row'>
-                                    <img src={UK} alt="UK-flag" className='img-flag' />
-                                    <span className=' m-6 fw-light fs-6'>United Kingdom</span>
-                                </div>
-                                <div className='d-flex flex-row p-uk-6'>
-                                    <span className='fw-light fs-6'>0690</span>
-                                    <span className='m-6 fw-light fs-6'>7.87%</span>
-                                </div>
-                            </div>
-                            <hr className="text-dark d-none d-sm-block"></hr>
-                            <div className='d-flex flex-row'>
-                                <div className='d-flex flex-row'>
-                                    <img src={RO} alt="RO-flag" className='img-flag' />
-                                    <span className='m-6 fw-light fs-6'>Romania</span>
-                                </div>
-                                <div className='d-flex flex-row p-rom-6'>
-                                    <span className='fw-light fs-6'>0600</span>
-                                    <span className='m-6 fw-light fs-6'>5.94%</span>
-                                </div>
-                            </div>
-                            <hr className="text-dark d-none d-sm-block"></hr>
-                            <div className='d-flex flex-row'>
-                                <div className='d-flex flex-row'>
-                                    <img src={BR} alt="BR-flag" className='img-flag' />
-                                    <span className='m-6 fw-light fs-6'>Brazil</span>
-                                </div>
-                                <div className='d-flex flex-row p-br-6'>
-                                    <span className='fw-light fs-6'>0550</span>
-                                    <span className='m-6 fw-light fs-6'>4.34%</span>
-                                </div>
-                            </div>
-                        </div>
+                <div className='row flex-lg-row flex-column p-4'>
+                    <div className='col align-items-center position-relative mx-3'>
+                        <WorldDataTable />
                     </div>
                     <div className='col align-items-center justify-content-center p-3 '>
-                        <VectorMap map={worldMill} regionStyle={{ initial: { fill: '#cccccc' } }} backgroundColor='white' />
+                        <VectorMap
+                            map={worldMill}
+                            regionStyle={regionStyle}
+                            backgroundColor='white'
+                            onRegionSelected={handleCountryClick}
+                        />
                     </div>
                 </div>
             </div>

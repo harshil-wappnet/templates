@@ -19,9 +19,9 @@ const Template1 = () => {
                 {showAdditionalSidebar ? (
                     <HideSideBar className="d-none d-lg-block" style={{ width: "17%" }} />
                 ) : (
-                    <MainSideBar className="" />
+                    <MainSideBar className="d-none d-lg-block" style={{ width: "17%" }} />
                 )}
-                <div className="align-items-center " style={{ width: "83%", maxWidth: "100%", marginLeft: "260px" }}>
+                <div className="align-items-center layout-style ">
                     <Layout />
                 </div>
             </div>
