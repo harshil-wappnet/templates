@@ -3,7 +3,7 @@ import { FaHeart } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <div className='min-vh-100'>
+        <div className=''>
             <hr className="text-dark d-none d-sm-block" ></hr>
             <footer className='ml-300'>
                 <div className='d-flex flex-row justify-content-evenly'>

@@ -17,7 +17,7 @@ import { FaAngular } from "react-icons/fa6";
 
 const HideSideBar = () => {
     return (
-        <div className="bg-image p-0 col-lg-1 col-sm-3 sidebar d-flex flex-column justify-content-between min-vh-100 sidebar-background">
+        <div className="d-none d-lg-block bg-image p-0 col-lg-1 col-sm-3 sidebar d-flex flex-column justify-content-between min-vh-100 sidebar-background">
             <div className="sidebar h-100">
                 <div className="mt-2 text-center" style={{ width: "128px" }}>
                     <Link

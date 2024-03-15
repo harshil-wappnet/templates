@@ -25,7 +25,7 @@ const MainSideBar = () => {
     };
 
     return (
-        <div className=" rows bg-image p-0 sidebar d-flex flex-column justify-content-between sidebar-background overflow-y-hidden" style={{ height: "800px" }}>
+        <div className="d-none d-lg-block rows bg-image p-0 sidebar d-flex flex-column justify-content-between sidebar-background overflow-y-hidden" style={{ height: "800px" }}>
             <div className="sidebar" >
                 {/* <div className="sidebar" style={{ height: "100vh", overflowY: "auto" }}> */}
                 <div className="mt-2" style={{ width: "260px" }}>
@@ -92,7 +92,7 @@ const MainSideBar = () => {
                             </li>
                             <li className="nav-item  my-1 ">
                                 <Link
-                                    to="/"
+                                    to="/components"
                                     onClick={() => toggleDropdown('components')}
                                     className="nav-link text-white"
                                     data-bs-toggle="collapse"
@@ -109,7 +109,7 @@ const MainSideBar = () => {
                                     <li className="nav-item ">
                                         <Link
                                             className="nav-link text-white "
-                                            to="/"
+                                            to="/components/buttons"
                                             aria-current="page"
                                         >
                                             Buttons
@@ -121,7 +121,7 @@ const MainSideBar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item ">
-                                        <Link className="nav-link text-white" to="/">
+                                        <Link className="nav-link text-white" to="/components/panels">
                                             Panels
                                         </Link>
                                     </li>
@@ -276,7 +276,7 @@ const MainSideBar = () => {
                             </li>
                             <li className="nav-item  my-1">
                                 <Link
-                                    to="/"
+                                    to="/charts"
                                     className="nav-link text-white"
                                     aria-current="page"
                                 >
