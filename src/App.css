@@ -14,6 +14,10 @@ body {
   width: 260px;
 }
 
+.bg-offcanvas-color {
+  background-color: rgba(247, 56, 32, 0.7) !important;
+}
+
 .sidebar {
   /* background-color: rgba(247, 56, 32, 0.7) !important; */
   background-color: rgba(247, 56, 32, 0.7) !important;
@@ -213,9 +217,40 @@ img {
   margin-left: 260px;
 }
 
+.tags {
+  background-color: #cacaca;
+  padding: 2px 8px 4px 8px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+/* .main-body-content {
+    margin-bottom: 50px !important;
+    width: 100%;
+  } */
+.offcanvas-body {
+  padding: 0px !important;
+  height: auto !important;
+}
+
+@media (max-width: 574px) {
+  .height-offcanvas {
+    height: 100vh !important;
+  }
+}
+
+@media (min-width: 575px) and (max-width: 576px) {
+  .height-offcanvas {
+    height: 100vh !important;
+  }
+}
+
 @media (max-width: 992px) {
   .nav-margin {
     margin: 13px 0px;
+  }
+  .ml-300 {
+    margin-left: 0px;
   }
 }
 
@@ -223,7 +258,12 @@ img {
   .layout-style {
     width: 83%;
     max-width: 100%;
-    margin-left: 0px !important;
+    margin-left: auto; /* Center the content */
+    margin-right: auto;
+  }
+
+  .offcanvas-width {
+    width: 60% !important;
   }
 
   .main-body-content {

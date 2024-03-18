@@ -12,11 +12,12 @@ import ManageList from "../components/ManageList";
 import WorldDataTable from './WorldDataTable';
 
 const DashboardMap = () => {
-    const [selectedCountry, setSelectedCountry] = useState();
+    const [selectedCountry, setSelectedCountry] = useState(null);
 
     const handleCountryClick = (event, code) => {
-        console.log("Clicked country code:", code);
-        setSelectedCountry(code);
+        const countryName = code; // Assuming code is the country code
+        setSelectedCountry({ code, name: countryName });
+        alert(`Country Code: ${code}, Country Name: ${countryName}`);
     };
 
     const regionStyle = {
@@ -26,19 +27,19 @@ const DashboardMap = () => {
 
     // Update the regionStyle for the selected country
     if (selectedCountry) {
-        regionStyle[selectedCountry] = { fill: '#fff' };
+        regionStyle[selectedCountry.code] = { fill: '#fff' };
     }
     return (
         <div className='rounded mt-5'>
             <div className='bg-white rounded shadow'>
-                <div className='d-flex flex-row mx-3'>
+                <div className='d-flex flex-row ms-3'>
                     <div className="globebox rounded-3">
                         <RiGlobalLine className='fs-3 fw-bolder text-white' />
                     </div>
                     <span className='fw-light fs-5 mx-3 pb-4'>Global Sales by Top Locations</span>
                 </div>
                 <div className='row flex-lg-row flex-column p-4'>
-                    <div className='col align-items-center position-relative mx-3'>
+                    <div className='col align-items-center position-relative'>
                         <WorldDataTable />
                     </div>
                     <div className='col align-items-center justify-content-center p-3 '>
@@ -46,7 +47,7 @@ const DashboardMap = () => {
                             map={worldMill}
                             regionStyle={regionStyle}
                             backgroundColor='white'
-                            onRegionSelected={handleCountryClick}
+                            onRegionClick={handleCountryClick}
                         />
                     </div>
                 </div>
@@ -54,7 +55,7 @@ const DashboardMap = () => {
             {/* Animated Cards */}
             <div className="row mt-5">
                 <div className="col-lg-4 flex-column flex-lg-row mt-5 mt-lg-0">
-                    <div className="card cards">
+                    <div className="card cards w-100">
                         <div className="imgbox">
                             <img
                                 src={pie}
@@ -77,7 +78,7 @@ const DashboardMap = () => {
                     </div>
                 </div>
                 <div className="col-lg-4 flex-column flex-lg-row mt-5 mt-lg-0">
-                    <div className="card cards">
+                    <div className="card cards w-100">
                         <div className="imgbox">
                             <img
                                 src={pie}
@@ -100,7 +101,7 @@ const DashboardMap = () => {
                     </div>
                 </div>
                 <div className="col-lg-4 flex-column flex-lg-row mt-5 mt-lg-0">
-                    <div className="card cards">
+                    <div className="card cards w-100">
                         <div className="imgbox">
                             <img
                                 src={histogram}

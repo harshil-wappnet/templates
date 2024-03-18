@@ -13,7 +13,7 @@ const ManageList = () => {
             <h3>Manage List</h3>
             <div className='row mt-5'>
                 <div className="col-lg-4 flex-column flex-lg-row mt-5 mt-lg-0">
-                    <div className="card cards">
+                    <div className="card cards w-100">
                         <div className="imgbox">
                             <img
                                 src={managelist1}
@@ -38,7 +38,7 @@ const ManageList = () => {
                     </div>
                 </div>
                 <div className="col-lg-4 flex-column flex-lg-row mt-5 mt-lg-0">
-                    <div className="card cards">
+                    <div className="card cards w-100">
                         <div className="imgbox">
                             <img
                                 src={managelist2}
@@ -63,7 +63,7 @@ const ManageList = () => {
                     </div>
                 </div>
                 <div className="col-lg-4 flex-column flex-lg-row mt-5 mt-lg-0">
-                    <div className="card cards">
+                    <div className="card cards w-100">
                         <div className="imgbox">
                             <img
                                 src={managelist3}

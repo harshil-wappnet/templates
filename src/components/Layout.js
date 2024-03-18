@@ -7,7 +7,7 @@ const Layout = () => {
     // const [showAdditionalSidebar, toggleAdditionalSidebar] = useAdditionalSidebar();
     return (
         <div>
-            <div className="main-body-content mx-4 " >
+            <div className="main-body-content mx-lg-4 " >
                 <Outlet />
             </div>
         </div>

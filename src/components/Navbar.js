@@ -26,7 +26,7 @@ const Navbar = ({ toggleAdditionalSidebar, showAdditionalSidebar }) => {
                     </div>
                     {/* Here notepad code */}
                     <div >
-                        <button className="navbar-toggler me-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="d-none d-lg-block" id="navbarSupportedContent">
@@ -51,7 +51,7 @@ const Navbar = ({ toggleAdditionalSidebar, showAdditionalSidebar }) => {
                     </div>
                 </div>
             </nav >
-            <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div className="offcanvas offcanvas-end offcanvas-width" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div className="offcanvas-body  ">
                     <OffcanvasSideBar />
                 </div>
